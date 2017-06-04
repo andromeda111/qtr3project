@@ -5,6 +5,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var dreams = require('./routes/dreams');
 
 var app = express();
 
@@ -19,7 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', index)
+app.use('/dreams', dreams)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

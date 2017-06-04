@@ -1,2 +1,7 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Dream Frog 🦋</h1>
+<button type="button" name="button">New Dream</button>
+{{#each allDreams}}
+<h4>{{dream_date}}</h4>
+<p>{{body}}</p>
+<hr>
+{{/each}}
