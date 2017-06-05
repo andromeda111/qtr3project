@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
   knex('dreams').then(allDreams => {
     res.json(allDreams);
   })
-});
+  .catch(err => next(err))
+})
 
-module.exports = router;
+module.exports = router

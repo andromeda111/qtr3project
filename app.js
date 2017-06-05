@@ -1,11 +1,11 @@
-const app = express();
 const bodyParser = require('body-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const path = require('path');
 
-const dreams = require('./routes/dreams');
+const app = express();
+// const dreams = require('./routes/dreams');
 
 
 // uncomment after placing your favicon in /public
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
-app.use('/', dreams)
+// app.use('/', dreams)
 
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public', 'angular')})

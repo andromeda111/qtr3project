@@ -1,6 +1,11 @@
-(function () {
-  'use strict'
+// (function () {
+//   'use strict'
 
-  angular.module('app', ['ui.router'])
-
-})()
+  // angular.module('', [])
+  //   .component('dreams', {
+  //     template: `<p>fuck dis</p>`,
+  //     controller: function () {
+  //       const vm = this
+  //     }
+  //   })
+// })()
