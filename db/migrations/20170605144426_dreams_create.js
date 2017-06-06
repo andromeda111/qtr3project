@@ -8,7 +8,7 @@ exports.up = function (knex, Promise) {
     t.integer('lucidity')
     t.boolean('nightmare')
     t.boolean('recurring')
-    t.integer('user_id').references('users.id').onDelete('CASCADE')
+    t.string('user_username')
     t.text('body').notNullable()
     t.text('interpretation')
     t.timestamps(true, true)
