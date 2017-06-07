@@ -4,7 +4,6 @@ var favicon = require('serve-favicon')
 var logger = require('morgan')
 var bodyParser = require('body-parser')
 
-var index = require('./routes/index')
 var dreams = require('./routes/dreams')
 var users = require('./routes/users')
 
@@ -16,15 +15,12 @@ app.use(allowCrossDomain)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
-// uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', index)
-app.use('/dreams', dreams)
+app.use('/', dreams)
 app.use('/users', users)
 
 function allowCrossDomain (req, res, next) {
